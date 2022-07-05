@@ -5,9 +5,7 @@ A demo of an app run on android platform that can store blood pressure and heart
 <br>
 <br>
 
-<p>
-  <img src = "Documents/Images/SS1.PNG" alt = "Splash Screen" title = "Splash Screen" width = "270" >
-</p>
+<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/Images/SS1.png" alt = "Splash Screen" title = "Splash Screen" width = "270" >
 <br>
 <br>
 <img src = "Documents/Images/SS2.PNG" alt = "Main Activity" title = "Main Activity" width = "270" >
