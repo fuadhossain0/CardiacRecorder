@@ -13,4 +13,4 @@ A demo of an app run on android platform that can store blood pressure and heart
 <br>
 <br>
 <img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/Images/SS4.png" alt = "Details of a Measurement" title = "Details of a Measurement" width = "270" >
-<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/Images/SS5.png" alt = "Update a Measurement" title = "Update a Measurement" width = "270" >
+<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/Images/SS5_updated.png" alt = "Update a Measurement" title = "Update a Measurement" width = "270" >
