@@ -22,3 +22,9 @@ A demo of an app run on android platform that can store blood pressure and heart
    <td><img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/Images/SS5_updated.png" alt = "Update a Measurement" title = "Update a Measurement" width = "270" ></td>
  </tr>
 </table>
+<br><br>
+### <ins> **UML Diagram:** </ins>
+<br>
+<br>
+
+<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/UML_Diagram.PNG" alt = "Splash Screen" title = "Splash Screen" width = "270" >
