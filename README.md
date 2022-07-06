@@ -27,4 +27,4 @@ A demo of an app running on android platform that can store blood pressure and h
 <br>
 <br>
 
-<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/UML_Diagram.PNG" alt = "Splash Screen" title = "Splash Screen" width = "270" >
+<img src = "https://raw.githubusercontent.com/fuadhossain0/CardiacRecorder/main/Documents/UML_Diagram.png" alt = "Splash Screen" title = "Splash Screen" width = "270" >
