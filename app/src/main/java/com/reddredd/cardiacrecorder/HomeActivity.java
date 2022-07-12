@@ -24,8 +24,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         recyclerView = findViewById(R.id.measurementListView);
-        //Measurement.measurementArrayList = new ArrayList<>();
+        Measurement.measurementArrayList = new ArrayList<>();
+
         setMeasurements();
+        loadFromDBToMemory();
         setAdapter();
 
         MaterialButton addNewMeasurementBtn = findViewById(R.id.addNewMeasurement);
@@ -35,6 +37,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, AddMeasurement.class));
             }
         });
+    }
+
+    private void loadFromDBToMemory()
+    {
+        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
+        sqLiteManager.populateMeasurementListArray();
     }
 
     private void setAdapter() {

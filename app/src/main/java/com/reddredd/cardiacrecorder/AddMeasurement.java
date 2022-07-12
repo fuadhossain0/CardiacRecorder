@@ -36,6 +36,9 @@ public class AddMeasurement extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
+
+
                 String sysP = systolicPressure.getText().toString();
                 String diaP = diastolicPressure.getText().toString();
                 String heartR = heartRate.getText().toString();
@@ -43,7 +46,9 @@ public class AddMeasurement extends AppCompatActivity {
                 String time = timeInp.getText().toString();
                 String comment = commentInp.getText().toString();
 
-                Measurement.measurementArrayList.add(new Measurement(date, time, sysP, diaP, heartR, comment));
+                //Measurement.measurementArrayList.add(new Measurement(date, time, sysP, diaP, heartR, comment));
+                Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
+                sqLiteManager.addMeasurementToDatabase(measurement);
 
                 Toast.makeText(getApplicationContext(), "Measurement saved!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
