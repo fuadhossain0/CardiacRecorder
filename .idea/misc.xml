@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1305" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1305" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1795" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/ic_svgviewer_output.xml" value="0.1795" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/rounded_corner.xml" value="0.1" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/rounded_corner_red.xml" value="0.187" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/splash_screen.xml" value="0.2355" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/drawable/svgviewer_output.xml" value="0.1795" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_add_measurement.xml" value="0.2" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_edit_measurement.xml" value="0.2526041666666667" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_measurement_detail.xml" value="0.2526041666666667" />
+        <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/item_view.xml" value="0.264" />
         <entry key="..\:/Users/Shawon/Desktop/New folder/CardiacRecorder/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
       </map>
     </option>
