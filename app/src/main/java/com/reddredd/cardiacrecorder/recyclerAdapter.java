@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyViewHolder> {
 
@@ -19,6 +20,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyView
 
     public recyclerAdapter(ArrayList<Measurement> measurementList, RecyclerViewClickListener listener){
         this.measurementList = measurementList;
+        //Collections.reverse(this.measurementList);
         this.listener = listener;
     }
 

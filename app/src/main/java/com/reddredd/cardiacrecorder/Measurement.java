@@ -28,7 +28,7 @@ public class Measurement implements Serializable {
         this.diastolicPressure = diastolicPressure;
         this.heartRate = heartRate;
         this.comment = comment;
-        this.id = uniqueNum++;
+        this.id = measurementArrayList.size();
     }
 
     public int getId() {return id;}

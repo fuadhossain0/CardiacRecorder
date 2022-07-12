@@ -15,7 +15,7 @@ public class MeasurementDetail extends AppCompatActivity {
 
     private TextView sysOut, diasOut, heartOut, dateOut, timeOut, commentOut;
     MaterialButton editBtn, deleteBtn;
-    int id = 0;
+    int id;
     Bundle extras;
     LinearLayout linearLayout;
 
@@ -39,6 +39,8 @@ public class MeasurementDetail extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
+                sqLiteManager.deleteNoteInDB(id);
                 Toast.makeText(getApplicationContext(), "Delete Successful!", Toast.LENGTH_SHORT).show();
                 finish();
             }

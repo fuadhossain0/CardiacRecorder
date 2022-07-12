@@ -45,7 +45,18 @@ public class EditMeasurement extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
 
+                String sysP = sysOut.getText().toString();
+                String diaP = diasOut.getText().toString();
+                String heartR = heartOut.getText().toString();
+                String date = dateOut.getText().toString();
+                String time = timeOut.getText().toString();
+                String comment = commentOut.getText().toString();
+
+                Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
+                measurement.setId(id);
+                sqLiteManager.updateNoteInDB(measurement);
 
                 Toast.makeText(getApplicationContext(), "Update Successful!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
