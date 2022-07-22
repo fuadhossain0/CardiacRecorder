@@ -38,6 +38,7 @@ public class AddMeasurement extends AppCompatActivity {
             public void onClick(View view) {
                 SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
 
+                Boolean okay = true;
 
                 String sysP = systolicPressure.getText().toString();
                 String diaP = diastolicPressure.getText().toString();
@@ -46,14 +47,42 @@ public class AddMeasurement extends AppCompatActivity {
                 String time = timeInp.getText().toString();
                 String comment = commentInp.getText().toString();
 
-                //Measurement.measurementArrayList.add(new Measurement(date, time, sysP, diaP, heartR, comment));
-                Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
-                sqLiteManager.addMeasurementToDatabase(measurement);
+                if(sysP.length() <= 0){
+                    systolicPressure.requestFocus();
+                    systolicPressure.setError("Enter systolic pressure");
+                    okay = false;
+                }
+                else if(diaP.length() <= 0){
+                    diastolicPressure.requestFocus();
+                    diastolicPressure.setError("Enter diastolic pressure");
+                    okay = false;
+                }
+                else if(heartR.length() <= 0){
+                    heartRate.requestFocus();
+                    heartRate.setError("Enter heart rate");
+                    okay = false;
+                }
+                else if(date.length() <= 0){
+                    dateInp.requestFocus();
+                    dateInp.setError("Enter a date");
+                    okay = false;
+                }
+                else if(time.length() <= 0) {
+                    timeInp.requestFocus();
+                    timeInp.setError("Enter a time");
+                    okay = false;
+                }
 
-                Toast.makeText(getApplicationContext(), "Measurement saved!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                finishAffinity();
-                startActivity(intent);
+                if(okay)
+                {
+                    Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
+                    sqLiteManager.addMeasurementToDatabase(measurement);
+
+                    Toast.makeText(getApplicationContext(), "Measurement saved!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    finishAffinity();
+                    startActivity(intent);
+                }
             }
         });
 

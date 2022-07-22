@@ -42,7 +42,9 @@ public class MeasurementDetail extends AppCompatActivity {
                 SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
                 sqLiteManager.deleteNoteInDB(id);
                 Toast.makeText(getApplicationContext(), "Delete Successful!", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                finishAffinity();
+                startActivity(intent);
             }
         });
 

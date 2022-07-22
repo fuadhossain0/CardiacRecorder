@@ -31,6 +31,7 @@ public class EditMeasurement extends AppCompatActivity {
         commentOut = findViewById(R.id.comment);
         updateBtn = findViewById(R.id.updateM);
         cancelBtn = findViewById(R.id.cancel);
+        extras = getIntent().getExtras();
 
         setMeasurements();
 
@@ -47,6 +48,8 @@ public class EditMeasurement extends AppCompatActivity {
 
                 SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(getApplicationContext());
 
+                Boolean okay = true;
+
                 String sysP = sysOut.getText().toString();
                 String diaP = diasOut.getText().toString();
                 String heartR = heartOut.getText().toString();
@@ -54,14 +57,43 @@ public class EditMeasurement extends AppCompatActivity {
                 String time = timeOut.getText().toString();
                 String comment = commentOut.getText().toString();
 
-                Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
-                measurement.setId(id);
-                sqLiteManager.updateNoteInDB(measurement);
+                if(sysP.length() <= 0){
+                    sysOut.requestFocus();
+                    sysOut.setError("Enter systolic pressure");
+                    okay = false;
+                }
+                else if(diaP.length() <= 0){
+                    diasOut.requestFocus();
+                    diasOut.setError("Enter diastolic pressure");
+                    okay = false;
+                }
+                else if(heartR.length() <= 0){
+                    heartOut.requestFocus();
+                    heartOut.setError("Enter heart rate");
+                    okay = false;
+                }
+                else if(date.length() <= 0){
+                    dateOut.requestFocus();
+                    dateOut.setError("Enter a date");
+                    okay = false;
+                }
+                else if(time.length() <= 0) {
+                    timeOut.requestFocus();
+                    timeOut.setError("Enter a time");
+                    okay = false;
+                }
 
-                Toast.makeText(getApplicationContext(), "Update Successful!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                finishAffinity();
-                startActivity(intent);
+                if(okay)
+                {
+                    Measurement measurement = new Measurement(date, time, sysP, diaP, heartR, comment);
+                    measurement.setId(id);
+                    sqLiteManager.updateNoteInDB(measurement);
+
+                    Toast.makeText(getApplicationContext(), "Update Successful!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    finishAffinity();
+                    startActivity(intent);
+                }
             }
         });
 

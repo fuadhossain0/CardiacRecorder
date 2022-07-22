@@ -26,7 +26,6 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.measurementListView);
         Measurement.measurementArrayList = new ArrayList<>();
 
-        setMeasurements();
         loadFromDBToMemory();
         setAdapter();
 
@@ -63,15 +62,6 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-    }
-
-    private void setMeasurements() {
-        /*Measurement.measurementArrayList.add(new Measurement("6 July, 2022", "10:34 AM", "110", "70", "65", "Good reading so far."));
-        Measurement.measurementArrayList.add(new Measurement("10 July, 2022", "07:43 PM", "110", "70", "65", "Good reading so far."));
-        Measurement.measurementArrayList.add(new Measurement("69 July, 6969", "69:69 PM", "69", "69", "69", "Good reading so far 69."));
-        Measurement.measurementArrayList.add(new Measurement("69 July, 6969", "69:69 PM", "69", "69", "69", "Good reading so far 69."));
-        Measurement.measurementArrayList.add(new Measurement("69 July, 6969", "69:69 PM", "69", "69", "69", "Good reading so far 69."));
-        Measurement.measurementArrayList.add(new Measurement("69 July, 6969", "69:69 PM", "69", "69", "69", "Good reading so far 69."));*/
     }
 
 }
