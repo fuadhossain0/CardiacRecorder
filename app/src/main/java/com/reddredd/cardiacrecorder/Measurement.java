@@ -1,5 +1,7 @@
 package com.reddredd.cardiacrecorder;
 
+import static java.sql.Types.NULL;
+
 import androidx.room.Entity;
 
 import java.io.Serializable;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 public class Measurement implements Serializable {
 
     public static ArrayList<Measurement> measurementArrayList = new ArrayList<>();
-    public static int uniqueNum = 0;
 
     private int id;
     private String date;
@@ -28,7 +29,7 @@ public class Measurement implements Serializable {
         this.diastolicPressure = diastolicPressure;
         this.heartRate = heartRate;
         this.comment = comment;
-        this.id = measurementArrayList.size();
+        this.id = NULL;
     }
 
     public int getId() {return id;}

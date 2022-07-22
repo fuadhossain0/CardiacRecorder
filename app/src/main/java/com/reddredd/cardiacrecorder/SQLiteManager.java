@@ -12,12 +12,11 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
     private static SQLiteManager sqLiteManager;
 
-    private static final String DATABASE_NAME = "MeasurementDB";
+    private static final String DATABASE_NAME = "MeasureDB";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "Measurements";
     private static final String COUNTER = "Counter";
 
-    private static final String ID_FIELD = "id";
     private static final String DATE_FIELD = "date";
     private static final String TIME_FIELD = "time";
     private static final String SYS_FIELD = "sys";
@@ -46,8 +45,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
                 .append("(")
                 .append(COUNTER)
                 .append(" INTEGER PRIMARY KEY AUTOINCREMENT, ")
-                .append(ID_FIELD)
-                .append(" INT, ")
                 .append(SYS_FIELD)
                 .append(" TEXT, ")
                 .append(DIA_FIELD)
@@ -74,7 +71,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ID_FIELD, measurement.getId());
         contentValues.put(SYS_FIELD, measurement.getSystolicPressure());
         contentValues.put(DIA_FIELD, measurement.getDiastolicPressure());
         contentValues.put(HEART_FIELD, measurement.getHeartRate());
@@ -94,13 +90,13 @@ public class SQLiteManager extends SQLiteOpenHelper {
             {
                 while(result.moveToNext())
                 {
-                    int id = result.getInt(1);
-                    String sys = result.getString(2);
-                    String dia = result.getString(3);
-                    String heart = result.getString(4);
-                    String date = result.getString(5);
-                    String time = result.getString(6);
-                    String comment = result.getString(7);
+                    int id = result.getInt(0);
+                    String sys = result.getString(1);
+                    String dia = result.getString(2);
+                    String heart = result.getString(3);
+                    String date = result.getString(4);
+                    String time = result.getString(5);
+                    String comment = result.getString(6);
                     Measurement measurement = new Measurement(date, time, sys, dia, heart, comment);
                     measurement.setId(id);
                     Measurement.measurementArrayList.add(measurement);
@@ -113,7 +109,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ID_FIELD, measurement.getId());
         contentValues.put(SYS_FIELD, measurement.getSystolicPressure());
         contentValues.put(DIA_FIELD, measurement.getDiastolicPressure());
         contentValues.put(HEART_FIELD, measurement.getHeartRate());
@@ -121,12 +116,12 @@ public class SQLiteManager extends SQLiteOpenHelper {
         contentValues.put(TIME_FIELD, measurement.getTime());
         contentValues.put(COMMENT_FIELD, measurement.getComment());
 
-        sqLiteDatabase.update(TABLE_NAME, contentValues, ID_FIELD + " =? ", new String[]{String.valueOf(measurement.getId())});
+        sqLiteDatabase.update(TABLE_NAME, contentValues, COUNTER + " =? ", new String[]{String.valueOf(measurement.getId())});
     }
 
     public void deleteNoteInDB(int id)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.delete(TABLE_NAME, ID_FIELD + new String[]{String.valueOf(id)}, null);
+        sqLiteDatabase.delete(TABLE_NAME, COUNTER + " = ?", new String[]{String.valueOf(id)});
     }
 }
