@@ -38,12 +38,18 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This function loads data from database into the recycler view
+     */
     private void loadFromDBToMemory()
     {
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
         sqLiteManager.populateMeasurementListArray();
     }
 
+    /**
+     * This function initiates the adapter and populates the recycler view
+     */
     private void setAdapter() {
         setOnClickListener();
         recyclerAdapter adapter = new recyclerAdapter(Measurement.measurementArrayList, listener);

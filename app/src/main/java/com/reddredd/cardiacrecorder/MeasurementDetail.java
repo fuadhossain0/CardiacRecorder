@@ -49,7 +49,9 @@ public class MeasurementDetail extends AppCompatActivity {
         });
 
     }
-
+    /**
+     * This function initializes the card view
+     */
     private void initWidgets() {
         linearLayout = findViewById(R.id.detailsLayout);
         sysOut = findViewById(R.id.sysOutput);
@@ -61,7 +63,9 @@ public class MeasurementDetail extends AppCompatActivity {
         editBtn = findViewById(R.id.editB);
         deleteBtn = findViewById(R.id.deleteB);
     }
-
+    /**
+     * This function loads data from array and set them in the view
+     */
     private void setMeasurements() {
         if(extras != null)
             id = extras.getInt("id");
