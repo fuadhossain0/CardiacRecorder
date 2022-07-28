@@ -18,11 +18,15 @@
         <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/activity_measurement_detail.xml" value="0.2526041666666667" />
         <entry key="..\:/KUET/3.1/Labs/CSE 3120/Final Project/CardiacRecorder/app/src/main/res/layout/item_view.xml" value="0.264" />
         <entry key="..\:/Users/Shawon/Desktop/New folder/CardiacRecorder/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Shawon/Desktop/SE Project/CardiacRecorder/app/src/main/res/layout/activity_edit_measurement.xml" value="0.1796875" />
+        <entry key="..\:/Users/Shawon/Desktop/SE Project/CardiacRecorder/app/src/main/res/layout/activity_home.xml" value="0.1796875" />
+        <entry key="..\:/Users/Shawon/Desktop/SE Project/CardiacRecorder/app/src/main/res/layout/activity_measurement_detail.xml" value="0.1796875" />
+        <entry key="..\:/Users/Shawon/Desktop/SE Project/CardiacRecorder/app/src/main/res/layout/item_view.xml" value="0.1796875" />
       </map>
     </option>
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Documents/JavaDoc" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../JavaDoc" />
     <option name="OPTION_SCOPE" value="public" />
     <option name="OPTION_INCLUDE_LIBS" value="true" />
   </component>
